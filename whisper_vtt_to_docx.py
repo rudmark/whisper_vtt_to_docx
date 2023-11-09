@@ -24,7 +24,7 @@ def vtt_to_docx(input_file_path, output_file_name):
     def add_row_to_table():
         nonlocal current_speaker, current_text, start_timestamp, end_timestamp
         if current_text:
-            current_text.replace("WEBVTT", "")
+            current_text = current_text.replace("WEBVTT", "")
             cells = table.add_row().cells
             cells[0].text = current_speaker if current_speaker else "Unknown Speaker"
             cells[1].text = current_text.strip() + f" ({start_timestamp} --> {end_timestamp})"
