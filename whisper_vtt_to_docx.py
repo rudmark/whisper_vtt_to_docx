@@ -39,7 +39,7 @@ def vtt_to_docx(input_file_path, output_file_name):
                 if not start_timestamp:  # If start_timestamp is not already set
                     start_timestamp = line.split(" --> ")[0]
             elif pattern_speaker.match(line):
-                speaker = line.split(':')[0] + "]"
+                speaker = line.split(':')[0]
                 if current_speaker and current_speaker != speaker:
                     if end_timestamp_temp:  # Check if variable is set
                         end_timestamp = end_timestamp_temp
